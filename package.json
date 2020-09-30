@@ -1,0 +1,27 @@
+{
+  "name": "duit-sass",
+  "version": "0.0.1",
+  "description": "Dope UI Tools, Sass",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "prettier": "2.1.2",
+    "sassdoc": "^2.7.3",
+    "stylelint-config-prettier": "^8.0.2"
+  },
+  "scripts": {
+    "sass": "node-sass --watch --recursive src -o css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanatk/duit-sass.git"
+  },
+  "author": "ryanatk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanatk/duit-sass/issues"
+  },
+  "homepage": "https://github.com/ryanatk/duit-sass#readme"
+}

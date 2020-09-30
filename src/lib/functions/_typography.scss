@@ -1,0 +1,52 @@
+@import '../../vars/index';
+
+@function get-typography-dimensions-map($name, $breakpoint: null) {
+  $map: map-get($typography-dimensions-map, $name);
+
+  @if $breakpoint {
+    $breakpoints: map-get($map, 'breakpoints');
+    $map: get-typography-dimension-map($breakpoints, $breakpoint);
+  }
+
+  @return $map;
+}
+
+@function get-typography-dimension-value($name, $prop, $breakpoint: null) {
+  $map: get-typography-dimensions-map($name, $breakpoint);
+
+  @return map-get($map, $prop);
+}
+
+@function get-typography-dimension-names() {
+  @return map-keys($typography-dimensions-map);
+}
+
+@function get-typography-dimension-breakpoints($name) {
+  $map: map-get($typography-dimensions-map, $name);
+  $list: ();
+
+  @if map-has-key($map, 'breakpoints') {
+    $breakpoints: map-get($map, 'breakpoints');
+    $list: map-keys($breakpoints);
+  }
+
+  @return $list;
+}
+
+@function font-size($name, $breakpoint: null) {
+  $prop: 'font-size';
+
+  @return get-typography-dimension-value($name, $prop, $breakpoint);
+}
+
+@function line-height($name, $breakpoint: null) {
+  $prop: 'line-height';
+
+  @return get-typography-dimension-value($name, $prop, $breakpoint);
+}
+
+@function letter-spacing($name, $breakpoint: null) {
+  $prop: 'letter-spacing';
+
+  @return get-typography-dimension-value($name, $prop, $breakpoint);
+}

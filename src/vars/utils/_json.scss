@@ -1,0 +1,21 @@
+@function json($map) {
+  $len: length($map);
+
+  // start
+  $obj: '{';
+
+  @each $key, $val in $map {
+    $obj: $obj + '"#{$key}": "#{$val}"';
+
+    // if not the last item
+    @if index($map, $key $val) < $len {
+      // add comma
+      $obj: $obj + ',';
+    }
+  }
+
+  // end
+  $obj: $obj + '}';
+
+  @return $obj;
+}

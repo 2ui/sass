@@ -1,0 +1,83 @@
+/// typography dimensions
+/// takes font-size, line-height, letter-spacing
+/// breakpoints allow override at named breakpoints
+$typography-dimension-default: 'inherit' !default;
+$typography-dimensions-map: (
+  'inherit': (
+    'font-size': inherit,
+    'line-height': inherit,
+    'letter-spacing': inherit,
+  ),
+  'page-heading': (
+    'font-size': 28,
+    'line-height': 36,
+    'letter-spacing': 0.1,
+    breakpoints: (
+      'medium-up': (
+        'font-size': 36,
+        'line-height': 44,
+      ),
+    ),
+  ),
+  'section-heading': (
+    'font-size': 24,
+    'line-height': 32,
+    'letter-spacing': 0.15,
+    breakpoints: (
+      'medium-up': (
+        'font-size': 28,
+        'line-height': 40,
+        'letter-spacing': 0.2,
+      ),
+    ),
+  ),
+  'list-heading': (
+    'font-size': 24,
+    'line-height': 35,
+  ),
+  'item-heading': (
+    'font-size': 18,
+    'line-height': 24,
+  ),
+  'category-heading': (
+    'font-size': 12,
+    'line-height': 18,
+  ),
+  'body': (
+    'font-size': 18,
+    'line-height': 26,
+  ),
+  'small': (
+    'font-size': 15,
+    'line-height': 20,
+  ),
+) !default;
+
+$typography-dimensions-list: map-keys($typography-dimensions-map) !default;
+
+// font families
+$font-family-default: 'inherit' !default;
+$font-families-map: (
+  'inherit': inherit,
+  'serif': (
+    Georgia,
+    serif,
+  ),
+  'sans': (
+    Arial,
+    sans-serif,
+  ),
+  'mono': 'Courier New',
+) !default;
+
+// font weights
+$font-weight-default: 'inherit' !default;
+$font-weights-map: (
+  'inherit': inherit,
+  'light': 200,
+  'normal': 400,
+  'semi-bold': 600,
+  'bold': 700,
+  'bolder': 800,
+  'boldest': 900,
+) !default;

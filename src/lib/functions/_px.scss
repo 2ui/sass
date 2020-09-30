@@ -1,0 +1,36 @@
+@import '../../vars/index';
+
+@function px($spacings) {
+  // list to hold return values
+  $return-value: ();
+
+  // loop thru the list
+  @each $size in $spacings {
+    $is-spacing-name: map-has-key($spacings-map, $size);
+
+    @if ($is-spacing-name) {
+      // get value from spacings map var
+      $size: map-get($spacings-map, $size);
+    }
+
+    $is-number: type-of($size) == 'number';
+    $is-not-zero: $size != 0;
+    $is-unitless: unitless($size);
+    $is-pixels: $is-unitless or unit($size) == 'px';
+
+    @if ($is-number and $is-not-zero and $is-pixels) {
+      @if ($is-unitless) {
+        // set to px
+        $size: $size * 1px;
+      }
+
+      // convert to rem
+      $size: $size / 16px * 1rem;
+    }
+
+    // add it to the return value
+    $return-value: append($return-value, $size);
+  }
+
+  @return $return-value;
+}
