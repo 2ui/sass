@@ -1,0 +1,5 @@
+@import '../../vars/index';
+
+@function breakpoint($name) {
+  @return map-get($breakpoints-map, $name);
+}

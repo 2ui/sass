@@ -7,6 +7,7 @@
   // loop thru the list
   @each $size in $spacings {
     $is-spacing-name: map-has-key($spacings-map, $size);
+    // @debug 'is-spacing-name: #{$is-spacing-name}';
 
     @if ($is-spacing-name) {
       // get value from spacings map var
@@ -15,8 +16,8 @@
 
     $is-number: type-of($size) == 'number';
     $is-not-zero: $size != 0;
-    $is-unitless: unitless($size);
-    $is-pixels: $is-unitless or unit($size) == 'px';
+    $is-unitless: $is-number and unitless($size);
+    $is-pixels: $is-unitless or ($is-number and unit($size) == 'px');
 
     @if ($is-number and $is-not-zero and $is-pixels) {
       @if ($is-unitless) {

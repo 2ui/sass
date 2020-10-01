@@ -5,7 +5,7 @@
 
   @if $breakpoint {
     $breakpoints: map-get($map, 'breakpoints');
-    $map: get-typography-dimension-map($breakpoints, $breakpoint);
+    $map: map-get($breakpoints, $breakpoint);
   }
 
   @return $map;
@@ -14,7 +14,13 @@
 @function get-typography-dimension-value($name, $prop, $breakpoint: null) {
   $map: get-typography-dimensions-map($name, $breakpoint);
 
-  @return map-get($map, $prop);
+  $val: null;
+
+  @if map-has-key($map, $prop) {
+    $val: map-get($map, $prop);
+  }
+
+  @return $val;
 }
 
 @function get-typography-dimension-names() {

@@ -1,0 +1,16 @@
+@import '../../functions/px';
+
+/// Output CSS properties & values, when they exist
+@mixin typography-output($name, $breakpoint: null) {
+  @if font-size($name, $breakpoint) {
+    font-size: px(font-size($name, $breakpoint));
+  }
+
+  @if line-height($name, $breakpoint) {
+    line-height: px(line-height($name, $breakpoint));
+  }
+
+  @if letter-spacing($name, $breakpoint) {
+    letter-spacing: px(letter-spacing($name, $breakpoint));
+  }
+}

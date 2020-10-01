@@ -1,7 +1,0 @@
-@import '../functions/typography';
-
-@mixin typography-dimensions($name) {
-  font-size: font-size($name);
-  line-height: line-height($name);
-  letter-spacing: letter-spacing($name);
-}

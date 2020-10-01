@@ -13,9 +13,13 @@ $typography-dimensions-map: (
     'line-height': 36,
     'letter-spacing': 0.1,
     breakpoints: (
-      'medium-up': (
+      'medium': (
         'font-size': 36,
         'line-height': 44,
+      ),
+      'large': (
+        'font-size': 42,
+        'line-height': 50,
       ),
     ),
   ),
@@ -24,7 +28,7 @@ $typography-dimensions-map: (
     'line-height': 32,
     'letter-spacing': 0.15,
     breakpoints: (
-      'medium-up': (
+      'medium': (
         'font-size': 28,
         'line-height': 40,
         'letter-spacing': 0.2,

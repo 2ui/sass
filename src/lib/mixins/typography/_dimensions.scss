@@ -1,0 +1,25 @@
+@import '../screen';
+@import 'output';
+
+//
+@mixin typography-dimensions($name, $breakpoint: null) {
+  $breakpoints-list: (null);
+
+  @if $breakpoint {
+    $breakpoints-list: ($breakpoint);
+  } @else {
+    @each $bp in get-typography-dimension-breakpoints($name) {
+      $breakpoints-list: append($breakpoints-list, $bp);
+    }
+  }
+
+  @each $breakpoint in $breakpoints-list {
+    @if $breakpoint != null {
+      @include screen($breakpoint) {
+        @include typography-output($name, $breakpoint);
+      }
+    } @else {
+      @include typography-output($name);
+    }
+  }
+}

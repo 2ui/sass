@@ -1,0 +1,11 @@
+@import '../../functions/typography';
+@import 'dimensions';
+
+/// Loop thru dimension names (keys) and output as modifiers
+@mixin typography-modifiers($list: get-typography-dimension-names()) {
+  @each $name in $list {
+    &--#{$name} {
+      @include typography-dimensions($name);
+    }
+  }
+}

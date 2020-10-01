@@ -1,9 +1,5 @@
 @import './lib/index';
 
 .text {
-  @each $name in get-typography-dimension-names() {
-    &--#{$name} {
-      @include typography-dimensions($name);
-    }
-  }
+  @include typography-modifiers;
 }

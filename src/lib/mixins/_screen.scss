@@ -1,0 +1,18 @@
+@import '../functions/px';
+@import '../functions/breakpoint';
+
+@mixin screen($name, $direction: 'up') {
+  $min-max: 'min';
+  $size: breakpoint($name);
+
+  @if $direction == 'down' {
+    $min-max: 'max';
+    $size: $size - 1;
+  }
+
+  $media-query: '#{$min-max}-width: #{px($size)}';
+
+  @media ($media-query) {
+    @content;
+  }
+}
