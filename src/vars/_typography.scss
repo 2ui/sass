@@ -1,87 +1,102 @@
-/// typography dimensions
-/// takes font-size, line-height, letter-spacing
-/// breakpoints allow override at named breakpoints
-$typography-dimension-default: 'inherit' !default;
+/// Default typography dimension, from map
+/// @group typography
+$typography-dimension-default: "inherit" !default;
+
+/// Map of all typography dimensions, by name.
+/// Includes `font-size`, `line-height`, & `letter-spacing`.
+/// Also includes overrides at 'breakpoints'.
+/// @group typography
 $typography-dimensions-map: (
-  'inherit': (
-    'font-size': inherit,
-    'line-height': inherit,
-    'letter-spacing': inherit,
+  "inherit": (
+    "font-size": inherit,
+    "line-height": inherit,
+    "letter-spacing": inherit,
   ),
-  'page-heading': (
-    'font-size': 28,
-    'line-height': 36,
-    'letter-spacing': 0.1,
+  "page-heading": (
+    "font-size": 28,
+    "line-height": 36,
+    "letter-spacing": 0.1,
     breakpoints: (
-      'medium': (
-        'font-size': 36,
-        'line-height': 44,
+      "medium": (
+        "font-size": 36,
+        "line-height": 44,
       ),
-      'large': (
-        'font-size': 42,
-        'line-height': 50,
+      "large": (
+        "font-size": 42,
+        "line-height": 50,
       ),
     ),
   ),
-  'section-heading': (
-    'font-size': 24,
-    'line-height': 32,
-    'letter-spacing': 0.15,
+  "section-heading": (
+    "font-size": 24,
+    "line-height": 32,
+    "letter-spacing": 0.15,
     breakpoints: (
-      'medium': (
-        'font-size': 28,
-        'line-height': 40,
-        'letter-spacing': 0.2,
+      "medium": (
+        "font-size": 28,
+        "line-height": 40,
+        "letter-spacing": 0.2,
       ),
     ),
   ),
-  'list-heading': (
-    'font-size': 24,
-    'line-height': 35,
+  "list-heading": (
+    "font-size": 24,
+    "line-height": 35,
   ),
-  'item-heading': (
-    'font-size': 18,
-    'line-height': 24,
+  "item-heading": (
+    "font-size": 18,
+    "line-height": 24,
   ),
-  'category-heading': (
-    'font-size': 12,
-    'line-height': 18,
+  "category-heading": (
+    "font-size": 12,
+    "line-height": 18,
   ),
-  'body': (
-    'font-size': 18,
-    'line-height': 26,
+  "body": (
+    "font-size": 18,
+    "line-height": 26,
   ),
-  'small': (
-    'font-size': 15,
-    'line-height': 20,
+  "small": (
+    "font-size": 15,
+    "line-height": 20,
   ),
 ) !default;
 
-$typography-dimensions-list: map-keys($typography-dimensions-map) !default;
+/// List of all typography dimension names.
+/// Helpful when looping thru them all, i.e. in a mixin.
+/// @group typography
+$typography-dimensions-names: map-keys($typography-dimensions-map) !default;
 
-// font families
-$font-family-default: 'inherit' !default;
+/// Default font family name
+/// @group typography
+$font-family-default: "inherit" !default;
+
+/// Map of font families, by name
+/// @group typography
 $font-families-map: (
-  'inherit': inherit,
-  'serif': (
+  "inherit": inherit,
+  "serif": (
     Georgia,
     serif,
   ),
-  'sans': (
+  "sans": (
     Arial,
     sans-serif,
   ),
-  'mono': 'Courier New',
+  "mono": "Courier New",
 ) !default;
 
-// font weights
-$font-weight-default: 'inherit' !default;
+/// Default font weight name
+/// @group typography
+$font-weight-default: "inherit" !default;
+
+/// Map of font weights, by name
+/// @group typography
 $font-weights-map: (
-  'inherit': inherit,
-  'light': 200,
-  'normal': 400,
-  'semi-bold': 600,
-  'bold': 700,
-  'bolder': 800,
-  'boldest': 900,
+  "inherit": inherit,
+  "light": 200,
+  "normal": 400,
+  "semi-bold": 600,
+  "bold": 700,
+  "bolder": 800,
+  "boldest": 900,
 ) !default;

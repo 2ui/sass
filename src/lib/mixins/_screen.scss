@@ -1,16 +1,32 @@
-@import '../functions/px';
-@import '../functions/breakpoint';
+@import "../functions/px";
+@import "../functions/breakpoint";
 
-@mixin screen($name, $direction: 'up') {
-  $min-max: 'min';
+/// Mixin to wrap styles in a media query
+/// @group layout
+/// @require breakpoint
+/// @require px
+/// @output media query around styles
+/// @example scss
+///     @include screen("medium") {
+///       flex-direction: row; // @content
+///     }
+///     // @media (min-width: 40rem) {
+///     //   flex-direction: row;
+///     // }
+/// @content wrapped styles
+/// @param {string} $name - breakpoint name
+/// @see $breakpoints-map
+/// @param {string} $direction ["up"] - breakpoint "up" or "down"
+@mixin screen($name, $direction: "up") {
+  $min-max: "min";
   $size: breakpoint($name);
 
-  @if $direction == 'down' {
-    $min-max: 'max';
+  @if $direction == "down" {
+    $min-max: "max";
     $size: $size - 1;
   }
 
-  $media-query: '#{$min-max}-width: #{px($size)}';
+  $media-query: "#{$min-max}-width: #{px($size)}";
 
   @media ($media-query) {
     @content;

@@ -1,6 +1,21 @@
-@import '../../functions/px';
+@import "../../functions/typography";
+@import "../../functions/px";
 
-/// Output CSS properties & values, when they exist
+/// Output CSS properties & values (when they exist)
+/// for a specific typography dimension & breakpoint.
+/// @group typography
+/// @require font-size
+/// @require line-height
+/// @require letter-spacing
+/// @require px
+/// @output styles (font-size, line-height, letter-spacing)
+/// @example scss
+///     @include typography-output("page-heading);
+///     // font-size: 1.75rem;
+///     // line-height: 2.25rem;
+///     // letter-spacing: 0.00625rem;
+/// @param {string} $name - typography dimension name
+/// @param {string} $breakpoint - breakpoing name
 @mixin typography-output($name, $breakpoint: null) {
   @if font-size($name, $breakpoint) {
     font-size: px(font-size($name, $breakpoint));

@@ -1,0 +1,8 @@
+{
+  "dest":"./docs/sassdoc",
+  "groups": {
+    "colors": "Colors",
+    "layout": "Layout",
+    "typography": "Typography"
+  }
+}

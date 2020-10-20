@@ -1,5 +1,13 @@
-@import '../../vars/index';
+@import "../../vars/index";
 
+/// Helper fn to get breakpoint, by name
+/// @group layout
+/// @require {map} $breakpoints-map
+/// @example scss
+///     breakpoint(large);
+///     // 1180
+/// @param {string} $name - breakpoint name
+/// @return {string} breakpoint value
 @function breakpoint($name) {
   @return map-get($breakpoints-map, $name);
 }

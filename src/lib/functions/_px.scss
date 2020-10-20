@@ -1,5 +1,20 @@
-@import '../../vars/index';
+@import "../../vars/index";
 
+/// Helper fn to get rems, either by spacing name or px value.
+/// Multiple params are accepted.
+/// @group layout
+/// @require {map} $spacings-map
+/// @example scss - by px value
+///     px(16)
+///     // 1rem
+/// @example scss - by spacing name
+///     px("double")
+///     // 2rem
+/// @example scss - multiple params
+///     px(0 inherit half 8)
+///     // 0 inherit .5rem .5rem
+/// @param {list | string} $spacings - spacing name or px value
+/// @return {string} color value
 @function px($spacings) {
   // list to hold return values
   $return-value: ();
@@ -7,17 +22,16 @@
   // loop thru the list
   @each $size in $spacings {
     $is-spacing-name: map-has-key($spacings-map, $size);
-    // @debug 'is-spacing-name: #{$is-spacing-name}';
 
     @if ($is-spacing-name) {
       // get value from spacings map var
       $size: map-get($spacings-map, $size);
     }
 
-    $is-number: type-of($size) == 'number';
+    $is-number: type-of($size) == "number";
     $is-not-zero: $size != 0;
     $is-unitless: $is-number and unitless($size);
-    $is-pixels: $is-unitless or ($is-number and unit($size) == 'px');
+    $is-pixels: $is-unitless or ($is-number and unit($size) == "px");
 
     @if ($is-number and $is-not-zero and $is-pixels) {
       @if ($is-unitless) {

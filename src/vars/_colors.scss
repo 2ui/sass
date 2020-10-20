@@ -1,14 +1,26 @@
+/// List of all colors for the app
+/// @group colors
 $colors-map: (
-  'black': #000,
-  'white': #fff,
-  'gray': #aaa,
-  'blue': #00f,
-  'green': #0f0,
-  'red': #f00,
+  "black": #000,
+  "white": #fff,
+  "gray": #aaa,
+  "blue": #00f,
+  "green": #0f0,
+  "red": #f00,
 ) !default;
 
-$text-color-default: 'black' !default;
-$text-colors: ('black', 'white', 'blue') !default;
+/// Default color for text
+/// @group colors
+$text-color-default: "black" !default;
 
-$background-color-default: 'white' !default;
-$background-colors: ('black', 'white', 'blue') !default;
+/// List of all text colors
+/// @group colors
+$text-colors: ("black", "white", "blue") !default;
+
+/// Default color for the background
+/// @group colors
+$background-color-default: "white" !default;
+
+/// List of all background colors
+/// @group colors
+$background-colors: ("black", "white", "blue") !default;
