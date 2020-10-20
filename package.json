@@ -1,5 +1,5 @@
 {
-  "name": "2ui-sass",
+  "name": "@2ui/sass",
   "version": "0.1.0",
   "description": "UI Tools: Sass",
   "main": "dist/main.css",
