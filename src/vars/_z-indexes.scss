@@ -1,8 +1,9 @@
+/// Map of z-index layers, by name
 $z-indexes-map: (
-  'graphics': 2,
-  'layover': 9,
-  'popup': 10,
-  'popover': 11,
-  'sticky': 99,
-  'dropdown': 100,
+  "graphics": 2,
+  "layover": 9,
+  "popup": 10,
+  "popover": 11,
+  "sticky": 99,
+  "dropdown": 100,
 ) !default;

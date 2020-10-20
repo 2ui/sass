@@ -1,0 +1,13 @@
+@import "../../vars/index";
+
+/// Helper fn to get color, by name
+/// @group colors
+/// @require {map} $colors-map
+/// @example scss
+///     color("blue");
+///     // #00f
+/// @param {string} $name - color name
+/// @return {string} color value
+@function color($name) {
+  @return map-get($colors-map, $name);
+}

@@ -1,8 +1,25 @@
-@import '../../functions/typography';
-@import 'dimensions';
+@import "../../functions/typography";
+@import "./dimensions";
 
-/// Loop thru dimension names (keys) and output as modifiers
-@mixin typography-modifiers($list: get-typography-dimension-names()) {
+/// Apply all typography dimensions to a selector,
+/// as BEM modifiers, and add all related styles to an element.
+///
+/// **NOTE:** Must be nested within a selector
+/// @group typography
+/// @require {list} $typography-dimensions-names
+/// @require {mixin} typography-dimensions
+/// @output BEM &--modifiers wrapped around styles
+/// @example scss - include specific names
+///     @include typography-modifiers("page-heading", "section-heading");
+///     // &--page-heading { /* typography dimensions */ }
+///     // &--section-heading { /* typography dimensions */ }
+/// @example scss - include all
+///     @include typography-modifiers;
+///     // &--page-heading { /* typography dimensions */ }
+///     // &--section-heading { /* typography dimensions */ }
+///     // ... /* all the other modifiers too */
+/// @param {list} $list [$typography-dimensions-names] - list of typography dimension names
+@mixin typography-modifiers($list: $typography-dimensions-names) {
   @each $name in $list {
     &--#{$name} {
       @include typography-dimensions($name);

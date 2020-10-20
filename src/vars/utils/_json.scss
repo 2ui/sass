@@ -1,8 +1,19 @@
+/// Helper to turn Sass map into JSON,
+/// to be exported for javascript
+/// @example scss
+///     $colors-map: (
+///       "red": #f00,
+///       "blue": #00f,
+///     );
+///     json($colors-map);
+///     // { "red": "#f00", "blue": "#00f" }
+/// @param {map} $map - map to convert
+/// @return {string} string with JSON formatting, for use with JSON.parse()
 @function json($map) {
   $len: length($map);
 
   // start
-  $obj: '{';
+  $obj: "{";
 
   @each $key, $val in $map {
     $obj: $obj + '"#{$key}": "#{$val}"';
@@ -10,12 +21,12 @@
     // if not the last item
     @if index($map, $key $val) < $len {
       // add comma
-      $obj: $obj + ',';
+      $obj: $obj + ",";
     }
   }
 
   // end
-  $obj: $obj + '}';
+  $obj: $obj + "}";
 
   @return $obj;
 }

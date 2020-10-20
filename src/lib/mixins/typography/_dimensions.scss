@@ -1,7 +1,22 @@
-@import '../screen';
-@import 'output';
+@import "../screen";
+@import "output";
 
-//
+/// Apply all styles from a single typography dimension name.
+/// Optionally specify a single breakpoint
+/// @group typography
+/// @require get-typography-dimension-breakpoints
+/// @require {mixin} screen
+/// @require {mixin} typography-output
+/// @output styles from typography dimension
+/// @example scss - all styles for "page-heading"
+///     @include typography-dimensions("page-heading");
+///     // /* typography dimension styles for "page-heading" */
+///     // /* styles for each breakpoint, wrapped in media query */
+/// @example scss - optional breakpoint
+///     @include typography-dimensions("page-heading", "medium");
+///     // /* typography dimension styles for "page-heading" "medium" */
+/// @param {string} $name - typography dimension name
+/// @param {string} $breakpoint [null] - breakpoint name
 @mixin typography-dimensions($name, $breakpoint: null) {
   $breakpoints-list: (null);
 

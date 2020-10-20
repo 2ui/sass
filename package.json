@@ -1,8 +1,8 @@
 {
-  "name": "duit-sass",
+  "name": "2ui-sass",
   "version": "0.0.1",
-  "description": "Dope UI Tools, Sass",
-  "main": "index.js",
+  "description": "UI Tools: Sass",
+  "main": "dist/main.css",
   "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.14.1",
@@ -11,17 +11,22 @@
     "stylelint-config-prettier": "^8.0.2"
   },
   "scripts": {
-    "sass": "node-sass --watch --recursive src -o css",
+    "sass-compile": "node-sass --recursive src -o dist",
+    "sass-watch": "node-sass --watch --recursive src -o dist",
+    "sass": "npm run sass-compile && npm run sass-watch",
+    "start": "npm run sass",
+    "sassdoc-build": "sassdoc src/**/* --config ./.sassdoc.json",
+    "sassdoc": "npm run sassdoc-build && open ./docs/sassdoc/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ryanatk/duit-sass.git"
+    "url": "git+https://github.com/2ui/sass.git"
   },
   "author": "ryanatk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ryanatk/duit-sass/issues"
+    "url": "https://github.com/2ui/sass/issues"
   },
-  "homepage": "https://github.com/ryanatk/duit-sass#readme"
+  "homepage": "https://github.com/2ui/sass#readme"
 }
