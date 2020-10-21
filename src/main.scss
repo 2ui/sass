@@ -3,4 +3,11 @@
 
 .text {
   @include typography-modifiers;
+  @include text-colors;
+}
+
+.block {
+  @include background-colors;
+  margin: px(0 auto);
+  padding: px(base double);
 }

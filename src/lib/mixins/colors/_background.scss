@@ -1,0 +1,35 @@
+@import "../../functions/color";
+@import "../utils/concat";
+
+/// Apply all colors as modifiers, as background color.
+/// @group colors
+/// @require color
+/// @require {list} $background-color-names
+/// @require {bool} $modifier-is-appended
+/// @require {string} $modifier-delimiter
+/// @example scss - include specific names
+///     @include background-colors("blue", "black");
+///     // &.blue { color: color(blue); }
+///     // &.black { color: color(black); }
+/// @example scss - include all
+///     @include background-colors;
+///     // &.blue { color: color(blue); }
+///     // &.black { color: color(black); }
+///     // ... /* all the other colors too */
+/// @param {list} $list [$background-color-names] - list of color names
+/// @param {bool} $is-appended [$modifier-is-appended] - if the selector is appended (or nested)
+/// @param {string} $delimiter [$modifier-delimiter] - delimiter for class/modifier name
+/// @output modifiers/class names wrapped around background colors
+@mixin background-colors(
+  $list: $background-color-names,
+  $is-appended: $modifier-is-appended,
+  $delimiter: $modifier-delimiter
+) {
+  @each $name in $list {
+    $modifier: "background-#{$name}";
+
+    @include concat($is-appended, $delimiter, $modifier) {
+      background-color: color($name);
+    }
+  }
+}

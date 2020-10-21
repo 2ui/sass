@@ -1,0 +1,18 @@
+/// Helper mixin to concatenate selector names,
+/// @group utils
+/// @param {bool} $is-appended - if the selector is appended (or nested)
+/// @param {string} $delimiter - delimiter for class/modifier name
+/// @param {string} $modifier-name - class/modifier name
+/// @content styles
+/// @output concatenated selector, around styles
+@mixin concat($is-appended, $delimiter, $modifier-name) {
+  $prefix: " "; // to nest the selector
+
+  @if $is-appended {
+    $prefix: "&"; // to append selector
+  }
+
+  #{$prefix}#{$delimiter}#{$modifier-name} {
+    @content;
+  }
+}
