@@ -140,4 +140,4 @@ input[type="submit"]:hover {
   cursor: pointer; }
 
 *:focus {
-  outline: 0.0625rem dashed color(blue); }
+  outline: 0.0625rem dashed; }

@@ -13,14 +13,14 @@ $colors-map: (
 /// @group colors
 $text-color-default: "black" !default;
 
-/// List of all text colors
+/// List of all text color names
 /// @group colors
-$text-colors: ("black", "white", "blue") !default;
+$text-color-names: ("black", "white", "blue") !default;
 
 /// Default color for the background
 /// @group colors
 $background-color-default: "white" !default;
 
-/// List of all background colors
+/// List of all background color names
 /// @group colors
-$background-colors: ("black", "white", "blue") !default;
+$background-color-names: ("black", "white", "blue") !default;

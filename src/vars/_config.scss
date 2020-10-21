@@ -1,0 +1,9 @@
+/// Delimiter used to append modifier classes (or names for BEM).
+/// Typical options are `.` to append a class name,
+/// or `--` to append a BEM modifier.
+/// @group config
+$modifier-delimiter: "." !default;
+
+/// Default setting for modifiers being appended (alternative is nesting)
+/// @group config
+$modifier-is-appended: true !default;

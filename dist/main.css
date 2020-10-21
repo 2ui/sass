@@ -140,52 +140,71 @@ input[type="submit"]:hover {
   cursor: pointer; }
 
 *:focus {
-  outline: 0.0625rem dashed color(blue); }
+  outline: 0.0625rem dashed; }
 
-.text--inherit {
+.text.inherit {
   font-size: inherit;
   line-height: inherit;
   letter-spacing: inherit; }
 
-.text--page-heading {
+.text.page-heading {
   font-size: 1.75rem;
   line-height: 2.25rem;
   letter-spacing: 0.00625rem; }
   @media (min-width: 39.375rem) {
-    .text--page-heading {
+    .text.page-heading {
       font-size: 2.25rem;
       line-height: 2.75rem; } }
   @media (min-width: 73.75rem) {
-    .text--page-heading {
+    .text.page-heading {
       font-size: 2.625rem;
       line-height: 3.125rem; } }
 
-.text--section-heading {
+.text.section-heading {
   font-size: 1.5rem;
   line-height: 2rem;
   letter-spacing: 0.00937rem; }
   @media (min-width: 39.375rem) {
-    .text--section-heading {
+    .text.section-heading {
       font-size: 1.75rem;
       line-height: 2.5rem;
       letter-spacing: 0.0125rem; } }
 
-.text--list-heading {
+.text.list-heading {
   font-size: 1.5rem;
   line-height: 2.1875rem; }
 
-.text--item-heading {
+.text.item-heading {
   font-size: 1.125rem;
   line-height: 1.5rem; }
 
-.text--category-heading {
+.text.category-heading {
   font-size: 0.75rem;
   line-height: 1.125rem; }
 
-.text--body {
+.text.body {
   font-size: 1.125rem;
   line-height: 1.625rem; }
 
-.text--small {
+.text.small {
   font-size: 0.9375rem;
   line-height: 1.25rem; }
+
+.text.text-black {
+  color: #000; }
+
+.text.text-white {
+  color: #fff; }
+
+.text.text-blue {
+  color: #00f; }
+
+.block {
+  margin: 0 auto;
+  padding: 1rem 2rem; }
+  .block.background-black {
+    background-color: #000; }
+  .block.background-white {
+    background-color: #fff; }
+  .block.background-blue {
+    background-color: #00f; }
