@@ -70,19 +70,25 @@ $typography-dimensions-names: map-keys($typography-dimensions-map) !default;
 /// @group typography
 $font-family-default: "inherit" !default;
 
+/// Sans-serif font family stack
+/// @group typography
+$font-family-sans: (Arial, sans-serif) !default;
+
+/// Serif font family stack
+/// @group typography
+$font-family-serif: (Georgia, serif) !default;
+
+/// Mono font family stack
+/// @group typography
+$font-family-mono: "Courier New" !default;
+
 /// Map of font families, by name
 /// @group typography
 $font-families-map: (
   "inherit": inherit,
-  "serif": (
-    Georgia,
-    serif,
-  ),
-  "sans": (
-    Arial,
-    sans-serif,
-  ),
-  "mono": "Courier New",
+  "sans": $font-family-sans,
+  "serif": $font-family-serif,
+  "mono": $font-family-mono,
 ) !default;
 
 /// Default font weight name
