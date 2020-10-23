@@ -99,10 +99,10 @@ $font-weight-default: "inherit" !default;
 /// @group typography
 $font-weights-map: (
   "inherit": inherit,
-  "light": 200,
+  "thin": 100,
+  "light": 300,
   "normal": 400,
-  "semi-bold": 600,
+  "medium": 500,
   "bold": 700,
-  "bolder": 800,
-  "boldest": 900,
+  "black": 900,
 ) !default;
