@@ -121,6 +121,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto; }
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -133,11 +139,22 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit; }
 
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  cursor: pointer; }
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  font-weight: inherit;
+  font-family: inherit;
+  font-size: inherit; }
+  button:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover {
+    cursor: pointer; }
 
 *:focus {
-  outline: 0.0625rem dashed; }
+  outline: 0.0625rem dashed #333;
+  outline-offset: 0.125rem; }

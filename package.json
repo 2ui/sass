@@ -18,6 +18,7 @@
     "sassdoc-build": "sassdoc src/**/* --config ./.sassdoc.json",
     "sassdoc": "npm run sassdoc-build && open ./docs/sassdoc/index.html",
     "prettier": "npm run prettier src/**/* --write",
+    "build": "npm run sass-compile && npm run sassdoc-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
