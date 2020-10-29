@@ -1,0 +1,13 @@
+@import "../../vars/index";
+
+/// Helper fn to get z-index, by name
+/// @group layout
+/// @require {map} $z-indexes-map
+/// @example scss
+///     z-index("graphics");
+///     // 2
+/// @param {string} $name - z-index name
+/// @return {string} z-index value
+@function z-index($name) {
+  @return map-get($z-indexes-map, $name);
+}

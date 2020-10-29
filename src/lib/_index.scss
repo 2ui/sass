@@ -1,10 +1,13 @@
 // lib
 
 // functions
-@import "./functions/px";
+@import "./functions/breakpoint";
 @import "./functions/color";
+@import "./functions/px";
 @import "./functions/typography";
+@import "./functions/z-index";
 
 // mixins
-@import "./mixins/typography/index";
 @import "./mixins/colors/index";
+@import "./mixins/screen";
+@import "./mixins/typography/index";
